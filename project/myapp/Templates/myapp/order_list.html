@@ -1,0 +1,22 @@
+{% extends 'myapp/base.html' %}
+
+{% block header %}
+Orders: Registers
+{% endblock header %}
+
+{% block main %}
+    <button>
+        <a href="{% url 'order_create' %}">Create</a>
+    </button>
+
+    {% for object in object_list %}
+        <p>
+            Products: {{ object.product | upper}} -
+            Clients: {{ object.client | upper}}
+            Date: {{ object.date_delivery | date:"d/m/Y"}}
+            Status: {{ object.status }}
+        </p>
+    {% empty %}
+        <p>There are no records.</p>
+    {% endfor %}
+{% endblock main %}
