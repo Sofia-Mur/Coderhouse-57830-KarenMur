@@ -7,6 +7,8 @@ Karen Sofia Mur
 ## Enlace a LinkedIn (opcional)
 [[Tu enlace a LinkedIn]](https://www.linkedin.com/in/karen-sof%C3%ADa-almanza-mur-802b47a5/)
 
+[[Video explicativo]] (https://drive.google.com/file/d/1e3_mAqejGgM0WiiLz2WlgUnpVzqMCkDw/view?usp=sharing)
+
 ## Descripción del Proyecto
 Este proyecto es una aplicación web desarrollada en Django que permite gestionar los productos de una libreria en línea
 
