@@ -5,9 +5,10 @@
 {% endblock header %}
 
 {% block main %}
-<form method="POST">
+<form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Create Account</button>
+    <button type="submit">Register</button>
 </form>
+
 {% endblock main %}

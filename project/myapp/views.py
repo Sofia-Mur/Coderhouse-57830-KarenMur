@@ -69,11 +69,10 @@ def signup(request):
             user.save()
             messages.success(request, "Account created successfully!")
             login(request, user)  # Inicia sesión automáticamente después del registro
-            return redirect('myapp/index.html')  # Redirige a la página principal
+            return redirect('myapp:index')  # Redirige a la página principal
     else:
         form = SignupForm()
-    
-    return render(request, "myapp/signup.html", {"form": form})
+    return render(request, 'myapp/signup.html', {'form': form})  # Asegúrate de renderizar el formulario
 
 def login_view(request):
     if request.method == "POST":
