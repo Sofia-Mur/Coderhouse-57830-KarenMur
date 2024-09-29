@@ -6,7 +6,7 @@ Clients: Logs
 
 {% block main %}
     <button>
-        <a href="{% url 'client_create' %}">Create</a>
+        <a href="{% url 'myapp:client_create' %}">Create</a>  <!-- Actualiza esta línea -->
     </button>
     {% for object in object_list %}
         <p>{{ object.name | upper }}, {{ object.email }} ({{ object.phone }})</p>

@@ -5,9 +5,9 @@ Products: Registers
 {% endblock header %}
 
 {% block main %}
-    <button>
-        <a href="{% url 'product_create' %}">Create</a>
-    </button>
+<button>
+    <a href="{% url 'myapp:product_create' %}">Create</a>
+</button>
 
     {% for object in object_list %}
         <p>{{ object.name | upper }} ${{ object.price}}</p>

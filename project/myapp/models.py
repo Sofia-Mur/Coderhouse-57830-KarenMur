@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Client(models.Model):
     name = models.CharField(max_length=100)
@@ -29,3 +30,14 @@ class Order(models.Model):
         # Retorna los productos en un formato legible
         return ', '.join([product.name for product in self.product.all()])
 
+
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    bio = models.TextField(blank=True)  # Campo de texto
+    age = models.PositiveIntegerField(null=True, blank=True)  # Campo de número
+    birth_date = models.DateField(null=True, blank=True)  # Campo de fecha
+    profile_picture = models.ImageField(upload_to='profile_pics/', null=True, blank=True)  # Campo de imagen
+
+    def __str__(self):
+        return self.user.username

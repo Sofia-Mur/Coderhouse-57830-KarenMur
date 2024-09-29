@@ -1,4 +1,18 @@
-<button><a href="{% url 'index' %}">🏠 Home</a></button>
-<button><a href="{% url 'client_list' %}">🗒️ Clients</a></button>
-<button><a href="{% url 'product_list' %}">🛒 Products</a></button>
-<button><a href="{% url 'order_list' %}">🤳 Orders</a></button>
+<!-- myapp/navbar.html -->
+<nav style="text-align: center;">
+    <button class="nav-button"><a href="{% url 'myapp:index' %}">🏠 Home</a></button>
+    <button class="nav-button"><a href="{% url 'myapp:client_list' %}">🗒️ Clients</a></button>
+    <button class="nav-button"><a href="{% url 'myapp:product_list' %}">🛒 Products</a></button>
+    <button class="nav-button"><a href="{% url 'myapp:order_list' %}">🤳 Orders</a></button>
+    <button class="nav-button"><a href="{% url 'myapp:about' %}">ℹ️ About Me</a></button> <!-- Enlace agregado -->
+    
+    {% if user.is_authenticated %}
+    <form action="{% url 'myapp:logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">⬅️ Logout</button>
+    </form>
+    {% else %}
+    <button class="nav-button"><a href="{% url 'myapp:login' %}">🔑 Log In</a></button>
+    <button class="nav-button"><a href="{% url 'myapp:signup' %}">🤳 Sign Up</a></button>
+    {% endif %}
+</nav>
